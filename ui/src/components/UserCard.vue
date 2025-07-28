@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import type { User } from '@/models/User';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-const props = defineProps([ 'user' ]);
+defineProps<{ user: User }>();
 </script>
 
 <template>

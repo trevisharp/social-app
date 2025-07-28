@@ -34,13 +34,19 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <el-input
+    <div id="search-container">
+        <el-input
         v-model="model" style="width: 90vw; margin: 5vw;"
         placeholder="Search users here" @input="search" />
-    
-    <UserCard v-for="user in store.users" :user="user"/>
+        
+        <UserCard v-for="user in store.users" :user="user"/>
+    </div>
 </template>
 
 <style>
-
+#search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 </style>

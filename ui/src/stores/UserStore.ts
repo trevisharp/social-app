@@ -13,7 +13,8 @@ export const userStore = defineStore('userStore', {
 
     actions: {
         async fetch() {
-            let url = "http://localhost:3000/user?limit=10&page=" + this.page;
+            let api = localStorage.getItem("api")
+            let url = api + "/user?limit=10&page=" + this.page;
 
             if (this.query !== "") {
                 url += "&query=" + this.query
